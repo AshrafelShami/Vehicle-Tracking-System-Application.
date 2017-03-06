@@ -14,19 +14,19 @@
 ********************************************************************************************/
 void ADC_Init ( Struct_ADC ADC_Config){
 
-	ADCSRA |= (1 << ADEN);					/*	Enable the ADC	*/
+	ADCSRA |= (1 << ADEN);			/*	Enable the ADC	*/
 
 	switch(ADC_Config.Vref_Ref_Sel){
 		case Vref_Internal_Vref_OFF : ADMUX &=~(1 << REFS1); ADMUX &=~(1 << REFS0); break;
 		case Vref_VCC_With_ext_cap  : ADMUX &=~(1 << REFS1); ADMUX |= (1 << REFS0); break;
-		case Vref_2_56_Volt			: ADMUX |= (1 << REFS1); ADMUX |= (1 << REFS0); break;
-		default						: ADMUX &=~(1 << REFS1); ADMUX &=~(1 << REFS0); break;
+		case Vref_2_56_Volt	    : ADMUX |= (1 << REFS1); ADMUX |= (1 << REFS0); break;
+		default			    : ADMUX &=~(1 << REFS1); ADMUX &=~(1 << REFS0); break;
 	}
 	
 	switch(ADC_Config.Result_Adjust){
 		case Left_Adjustment  : ADMUX |= (1 << ADLAR); break;
 		case Right_Adjustment : ADMUX &=~(1 << ADLAR); break;
-		default				  : ADMUX &=~(1 << ADLAR); break;
+		default		      : ADMUX &=~(1 << ADLAR); break;
 	}
 	
 	switch(ADC_Config.Prescaler_Sel){
@@ -37,19 +37,19 @@ void ADC_Init ( Struct_ADC ADC_Config){
 		case Division_Factor_32  : ADCSRA |=  (1 << ADPS2); ADCSRA &=~ (1 << ADPS1); ADCSRA |=  (1 << ADPS0); break;
 		case Division_Factor_64  : ADCSRA |=  (1 << ADPS2); ADCSRA |=  (1 << ADPS1); ADCSRA &=~ (1 << ADPS0); break;
 		case Division_Factor_128 : ADCSRA |=  (1 << ADPS2); ADCSRA |=  (1 << ADPS1); ADCSRA |=  (1 << ADPS0); break;
-		default					 : ADCSRA &=~ (1 << ADPS2); ADCSRA &=~ (1 << ADPS1); ADCSRA &=~ (1 << ADPS0); break;
+		default			 : ADCSRA &=~ (1 << ADPS2); ADCSRA &=~ (1 << ADPS1); ADCSRA &=~ (1 << ADPS0); break;
 	}
 	
 	switch(ADC_Config.Running_Mode){
 		case Enable  : ADCSRA |= (1 << ADFR); break;
 		case Disable : ADCSRA &=~(1 << ADFR); break;
-		default		 : ADCSRA &=~(1 << ADFR); break;
+		default	     : ADCSRA &=~(1 << ADFR); break;
 	}
 	
 	switch(ADC_Config.Interrupt_Sel){
 		case Interrupt_Disable	: ADCSRA &=~(1 << ADIE); break;
 		case Interrupt_Enable	: ADCSRA |= (1 << ADIE); break;
-		default					: ADCSRA &=~(1 << ADIE); break;
+		default			: ADCSRA &=~(1 << ADIE); break;
 	}
 }
 
@@ -61,11 +61,11 @@ void ADC_Init ( Struct_ADC ADC_Config){
 ********************************************************************************************/
 u16 ADC_Scan ( u8 Channel_Select ){
 	Channel_Select &= 0x07;
-	ADMUX |= Channel_Select;				/*	Select ADC Channel					*/
+	ADMUX |= Channel_Select;			/*	Select ADC Channel			*/
 	
-	ADCSRA |= (1 << ADSC);					/*	Start the Convention				*/
+	ADCSRA |= (1 << ADSC);				/*	Start the Convention			*/
 	
 	while (ADCSRA & (1 << ADSC));			/*	Wait for the conversion to complete
-												And ADSC bit will be LOW		    */
+								And ADSC bit will be LOW	  	*/
 	return ADC;
 }
