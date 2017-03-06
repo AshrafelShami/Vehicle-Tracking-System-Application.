@@ -1,0 +1,2 @@
+# Vehicle-Tracking-System-Application.
+A Vehicle Tracking System project (Atmega128 based) Interfacing with GPS and GSM SIM900 modules, The GPS continuously Sends   data to a buffer in the ATmega128 , If we wants to track the vehicle we need to send SMS to the GSM module. The GSM is also   activated by detecting an accident using photo IR sensor or by detecting a fire using Temperature sensor(LM-35).
