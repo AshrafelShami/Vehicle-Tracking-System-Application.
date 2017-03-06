@@ -1,4 +1,4 @@
-/*		Included Project Files				*/
+/*	Included Project Files		*/
 #include <avr/interrupt.h>
 #include "IR_Sensors/IR_Config.h"
 #include "toStr/toStr_Config.h"
@@ -11,19 +11,19 @@
 /*      Tasks and functions declaration     */
 void System_Init	( void );
 
-/*			   Global Variables				*/
+/*	 Global Variables        	    */
 extern GPS_Frames GPS;
 
 int main(void){
-	/*			System Initialization			*/
+	/*	System Initialization	*/
 	System_Init();
 
-	/*			   Local Variables				*/
+	/*	 Local Variables	*/
 	u8 Emergency_Flag = 0;
 	u32 ADC_TempRead  = 0;
 	u8 Temprature [5] = {0};
 		
-	/*			   While Loop					*/
+	/*	 While Loop		*/
 	while (1){
 		ADC_TempRead = ADC_Scan(0);
 		ADC_TempRead = (ADC_TempRead * 1000) / 2048;
@@ -43,7 +43,7 @@ int main(void){
 }
 
 void System_Init( void ){
-	/*					USART Initialization					*/
+	/*		USART Initialization			*/
 	Struct_USART USART_Init_Struct;
 	USART_Init_Struct.BuadRate		=	9600;
 	USART_Init_Struct.Operation_Mode=	Asynchronous_Normal_Speed;
@@ -53,7 +53,7 @@ void System_Init( void ){
 	USART_Init_Struct.Parity_Mode	=	No_Parity;
 	USART_Init(USART_Init_Struct);
 
-	/*					ADC Initialization						*/
+	/*		ADC Initialization			*/
 	Struct_ADC	ADC_Init_Struct;
 	ADC_Init_Struct.Vref_Ref_Sel	=	Vref_VCC_With_ext_cap;
 	ADC_Init_Struct.Result_Adjust	=	Right_Adjustment;
@@ -62,9 +62,9 @@ void System_Init( void ){
 	ADC_Init_Struct.Interrupt_Sel	=	Enable;
 	ADC_Init(ADC_Init_Struct);
 	
-	/*					LCD Initialization						*/
+	/*		LCD Initialization			*/
 	LCD_Init(&PINC, &PINC, 2,1,0,3,4,5,6);
 	
-	/*			IR Sensors pins Initialization					*/
+	/*		IR Sensors pins Initialization		*/
 	IR_Sensors_Init();
 }
