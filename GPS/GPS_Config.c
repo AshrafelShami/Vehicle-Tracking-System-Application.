@@ -185,12 +185,12 @@ u8* GPS_HDOP( void ){
 ********************************************************************************************/
 
 void GPS_Update ( void ){
-	GPS_Data			();
-	GPS_GPGGA			();
-	GPS_Longitude		();
-	GPS_Latitude		();
-	GPS_Altitude		();
-	GPS_Time			();
-	GPS_Satellite_No	();
-	GPS_HDOP			();
+	GPS_Data	();
+	GPS_GPGGA	();
+	GPS_Longitude	();
+	GPS_Latitude	();
+	GPS_Altitude	();
+	GPS_Time	();
+	GPS_Satellite_No();
+	GPS_HDOP	();
 }
