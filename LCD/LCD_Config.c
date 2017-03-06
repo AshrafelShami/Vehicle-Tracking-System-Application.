@@ -4,15 +4,15 @@
   Name:     LCD_Init.
   Purpose:  Initialize the LCD Control and Data ports and pins.
   Entry:    LCD_Init (&PIND, &PINC, 0, 1, 2, 3, 4, 5, 6)															
-	  					|      |    |  |  |  |  |  |  |___________ Data_4 Pin.										
-	  					|      |    |  |  |  |  |  |______________ Data_3 Pin.										
-	  					|      |    |  |  |  |  |_________________ Data_2 Pin.										
-	  					|      |    |  |  |  |____________________ Data_1 Pin.										
-	  					|      |    |  |  |_______________________ Register Select Pin.							
-	  					|      |    |  |__________________________ Read/Write Pin.									
-	  					|      |    |_____________________________ Enable Pin.										
-	  					|      |__________________________________ Address of Control Port.						
-	  					|_________________________________________ Address of Data Port.
+			|      |    |  |  |  |  |  |  |___________ Data_4 Pin.										
+			|      |    |  |  |  |  |  |______________ Data_3 Pin.										
+			|      |    |  |  |  |  |_________________ Data_2 Pin.										
+			|      |    |  |  |  |____________________ Data_1 Pin.										
+			|      |    |  |  |_______________________ Register Select Pin.							
+			|      |    |  |__________________________ Read/Write Pin.									
+			|      |    |_____________________________ Enable Pin.										
+			|      |__________________________________ Address of Control Port.						
+			|_________________________________________ Address of Data Port.
   Exit:     no parameters
 */
 void LCD_Init ( vu8* D_Port, vu8* C_Port, u8 E_Pin, u8 RW_Pin, u8 RS_Pin, u8 D1_Pin, u8 D2_Pin, u8 D3_Pin, u8 D4_Pin){
