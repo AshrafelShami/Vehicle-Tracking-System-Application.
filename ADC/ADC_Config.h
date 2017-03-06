@@ -38,11 +38,11 @@ typedef enum{
 	}Interrupt;
 
 typedef struct{
-		Vref				Vref_Ref_Sel	;
-		Adjust				Result_Adjust	;
-		Prescaler			Prescaler_Sel	;
+		Vref			Vref_Ref_Sel	;
+		Adjust			Result_Adjust	;
+		Prescaler		Prescaler_Sel	;
 		Free_Running_Mode	Running_Mode	;
-		Interrupt			Interrupt_Sel	;
+		Interrupt		Interrupt_Sel	;
 	}Struct_ADC;
 	
 void ADC_Init ( Struct_ADC );
