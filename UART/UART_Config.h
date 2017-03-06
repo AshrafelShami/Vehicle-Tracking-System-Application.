@@ -72,13 +72,13 @@ typedef enum{
 	}interrupt_Set;
 
 typedef struct{
-	Operation		Operation_Mode;
-	Duplex			Duplex_Select;
-	Baud_Rate		BuadRate;
-	Character		Char_Size;
-	Parity			Parity_Mode;
-	Stop			Stop_Bit;
-	Polirity		Clock_Polirity;
+	Operation	Operation_Mode;
+	Duplex		Duplex_Select;
+	Baud_Rate	BuadRate;
+	Character	Char_Size;
+	Parity		Parity_Mode;
+	Stop		Stop_Bit;
+	Polirity	Clock_Polirity;
 	interrupt_Set	interrupt_Sel;
 	}Struct_USART;
 
@@ -91,7 +91,7 @@ typedef enum{
 
 typedef struct{
 	RX_Data_Status	Detection;
-	u8				Data;
+	u8		Data;
 }Struct_Status;
 
 void USART_Init(Struct_USART);
