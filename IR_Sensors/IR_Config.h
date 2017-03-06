@@ -4,8 +4,8 @@
 #include "../Functions_Prototypes/IR_Functions_Prototypes.h"
 #include <avr/io.h>
 
-#define		Accident		1
-#define		No_Accident		0
+#define	Accident		1
+#define	No_Accident		0
 
 #define IRSensor1_Bit		0
 #define IRSensor2_Bit		1
