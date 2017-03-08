@@ -1,12 +1,11 @@
 /*	Included Project Files		*/
-#include <avr/interrupt.h>
-#include "IR_Sensors/IR_Config.h"
-#include "toStr/toStr_Config.h"
+#include "Functions_Prototypes/SIM900_Functions_Prototypes.h"
+#include "Functions_Prototypes/toStr_Function_Prototypes.h"
+#include "Functions_Prototypes/IR_Functions_Prototypes.h"
+#include "Functions_Prototypes/LCD_Function_Prototypes.h"
 #include "ADC/ADC_Config.h"
 #include "UART/UART_Config.h"
-#include "LCD/LCD_Config.h"
 #include "GPS/GPS_Config.h"
-#include "SIM900/SIM900_Config.h"
 
 /*      Tasks and functions declaration     */
 void System_Init	( void );
