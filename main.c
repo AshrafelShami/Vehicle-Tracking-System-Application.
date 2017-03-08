@@ -58,7 +58,7 @@ void System_Init( void ){
 	ADC_Init_Struct.Result_Adjust	=	Right_Adjustment;
 	ADC_Init_Struct.Prescaler_Sel	=	Division_Factor_128;
 	ADC_Init_Struct.Running_Mode	=	Disable;
-	ADC_Init_Struct.Interrupt_Sel	=	Enable;
+	ADC_Init_Struct.Interrupt_Sel	=	Disable;
 	ADC_Init(ADC_Init_Struct);
 	
 	/*		LCD Initialization			*/
